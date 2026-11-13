@@ -20,9 +20,9 @@ def q_val(d_phi: Callable[[float], float], a: float, b: float) -> float:
     return max(abs(d_phi(a)), abs(d_phi(b)))                # Функція для обчислення q(a, b)
 
 def save_to_file(filename, root, iteration_count, protocol):
-    with open(filename, "w", encoding="utf-8") as file:
+    with open(filename, "a", encoding="utf-8") as file:
         file.write("Результати обчислень:\n")
-        file.write(f"Знайдений корінь: {root}\n")
+        file.write(f"Знайдений корінь: {root:.6f}\n")
         file.write(f"Кількість ітерацій: {iteration_count}\n")
 
         file.write(f"{'Iter':<10} | {'x_n':>10} | {'x_n+1':>10} | {'|x_n+1 - x_n|':>15} | {'f(x_n+1)':>14}\n")
